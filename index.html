@@ -59,7 +59,16 @@
             Эффективные решения<br />
             для вашего бизнеса
           </h1>
-          <button type="button" class="order-button">Заказать услугу</button>
+          <button type="button" class="order-button" data-modal-open>Заказать услугу</button>
+          <div class="backdrop is-hidden" data-modal>
+            <div class="modal">
+              <button type="button" class="close-button" data-modal-close>
+                <svg width="11" height="11" class="icon-close">
+                  <use href="./images/icons.svg#close"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
       </section>
       <!-- features -->
@@ -121,12 +130,15 @@
           <ul class="list">
             <li class="item">
               <img src="./images/work1.jpg" alt="Человек работает на компьютере" width="370" />
+              <p class="description">Десктопные приложения</p>
             </li>
             <li class="item">
               <img src="./images/work2.jpg" alt="Смартфон и ноутбук" width="370" />
+              <p class="description">Мобильные приложения</p>
             </li>
             <li class="item">
               <img src="./images/work3.jpg" alt="Планшет" width="370" />
+              <p class="description">Дизайнерские решения</p>
             </li>
           </ul>
         </div>
@@ -400,5 +412,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
