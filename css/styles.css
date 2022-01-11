@@ -351,7 +351,7 @@ img {
   display: flex;
   justify-content: center;
 }
-.list.social li {
+.list.social li:not(:last-child) {
   margin-right: 10px;
 }
 .team .item {
