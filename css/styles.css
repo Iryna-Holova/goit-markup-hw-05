@@ -62,14 +62,8 @@ img {
 input,
 textarea {
   font-family: inherit;
-  outline: none;
+  outline: transparent;
   background-color: transparent;
-}
-
-fieldset {
-  padding: 0;
-  margin: 0;
-  border: none;
 }
 
 body {
@@ -452,7 +446,7 @@ body {
   padding-left: 16px;
   border: 1px solid var(--color-white-background);
   border-radius: 4px;
-  box-shadow: var(--shadow-hero-button);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   font-size: 12px;
   line-height: 1.5;
   letter-spacing: 0.04em;
@@ -579,27 +573,26 @@ body {
   width: 360px;
 }
 
-.order-form-fields {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 16px;
+.order-form-field {
+  margin-bottom: 8px;
 }
 
 .order-form-label {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  position: relative;
+  display: block;
+  margin-bottom: 4px;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
   color: var(--color-subtle-text);
-  cursor: pointer;
+}
+
+.order-form-inputbox {
+  position: relative;
 }
 
 .order-form-input,
 .order-form-textarea {
+  width: 100%;
   border: 1px solid var(--color-navyblue-modal);
   border-radius: 4px;
   font-size: 12px;
@@ -609,9 +602,12 @@ body {
 }
 
 .order-form-input {
-  padding: 11px;
+  height: 40px;
   padding-left: 38px;
-  line-height: 1.32;
+}
+
+.order-form-comment-field {
+  margin-bottom: 16px;
 }
 
 .order-form-textarea {
@@ -640,57 +636,65 @@ body {
 .order-form-icon {
   position: absolute;
   left: 16px;
-  bottom: 11px;
+  top: 50%;
+  transform: translateY(-50%);
   fill: var(--color-dark);
   transition: fill var(--transition-time) var(--transition-func);
 }
 
-.order-form-label.checkbox-label {
-  flex-direction: row;
-  gap: 8px;
-  align-items: center;
+.order-form-checkbox-field {
   margin-bottom: 24px;
 }
 
-.checkbox-label span {
+.order-form-checkbox-label {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: var(--color-subtle-text);
+}
+
+/* .checkbox-label:hover .checkbox-icon,
+.checkbox-label:focus .checkbox-icon,
+.checkbox-icon:hover,
+.checkbox-icon:focus {
+  border-color: var(--color-pressed-state);
+} */
+
+.checkbox {
+  margin-right: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--color-navyblue-modal);
+  border-radius: 2px;
+  fill: transparent;
+  transition: border var(--transition-time) var(--transition-func),
+    background-color var(--transition-time) var(--transition-func),
+    fill var(--transition-time) var(--transition-func);
+}
+
+.order-form-checkbox:checked + .order-form-checkbox-label > .checkbox {
+  border-color: var(--color-pressed-state);
+  background-color: var(--color-pressed-state);
+  fill: var(--color-light);
+}
+
+.order-form-checkbox-label:hover>.checkbox,
+.order-form-checkbox-label:focus>.checkbox {
+  border-color: var(--color-pressed-state);
+}
+
+.order-form-checkbox-label a {
   color: var(--color-primary-brand);
   text-decoration: underline;
   transition: color var(--transition-time) var(--transition-func);
 }
 
-.checkbox-label span:hover,
-.checkbox-label span:focus {
+.order-form-checkbox-label a:hover,
+.order-form-checkbox-label a:focus {
   color: var(--color-pressed-state);
-}
-
-.order-form-checkbox {
-  width: 16px;
-  height: 16px;
-  margin: 0;
-  opacity: 0;
-}
-
-.checkbox-label:hover .checkbox-icon,
-.checkbox-label:focus .checkbox-icon,
-.checkbox-icon:hover,
-.checkbox-icon:focus {
-  border-color: var(--color-pressed-state);
-}
-
-.checkbox-icon {
-  position: absolute;
-  border: 1px solid var(--color-navyblue-modal);
-  border-radius: 2px;
-  fill: var(--color-modal-background);
-  transition: border-color var(--transition-time) var(--transition-func),
-    background-color var(--transition-time) var(--transition-func),
-    fill var(--transition-time) var(--transition-func);
-}
-
-.order-form-checkbox:checked + .checkbox-icon {
-  border-color: var(--color-pressed-state);
-  background-color: var(--color-pressed-state);
-  fill: var(--color-light);
 }
 
 .portfolio-section {
