@@ -448,11 +448,13 @@ body {
 
 .subscribe-input {
   width: 264px;
-  padding: 8px 16px;
+  height: 40px;
+  padding-left: 16px;
   border: 1px solid var(--color-white-background);
   border-radius: 4px;
+  box-shadow: var(--shadow-hero-button);
   font-size: 12px;
-  line-height: 1.87;
+  line-height: 1.5;
   letter-spacing: 0.04em;
   color: var(--color-white-background);
   transition: border-color var(--transition-time) var(--transition-func);
@@ -468,10 +470,11 @@ body {
 }
 
 .subscribe-button {
+  min-width: 165px;
+  height: 40px;
   display: flex;
-  gap: 16px;
+  justify-content: center;
   align-items: center;
-  padding: 8px 24px;
   border-radius: 4px;
   font-size: 16px;
   font-weight: 500;
@@ -487,7 +490,8 @@ body {
   background-color: var(--color-pressed-state);
 }
 
-.subscribe-button > svg {
+.subscribe-icon {
+  margin-left: 16px;
   fill: var(--color-white-background);
 }
 
